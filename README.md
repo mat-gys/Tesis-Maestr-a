@@ -1,1 +1,1 @@
-# Tesis-Maestr-a
+# Tesis-Maestria
