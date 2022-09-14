@@ -1,4 +1,5 @@
-In this repository, you'll find the replication files for my Master's thesis "Does Momentum Matter? The Effect of Timeouts on Team Performance: Evidence from E-sports".
+In this repository, you'll find the replication files for my Master's thesis:
+*"Does Momentum Matter? The Effect of Timeouts on Team Performance: Evidence from E-sports"*.
 
 # Data
 The file 'final' in the 'ouput' folder has all the data necessary to run the dofile regressions.
