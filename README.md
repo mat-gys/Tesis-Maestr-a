@@ -10,7 +10,7 @@ Take into account, since some variables had to be included manually, that the la
 ## Code
 There are some pre-requisites to be able to run the code:
 - [Golang](https://go.dev/dl/): this is necessary for the Awpy library to work. Must be version 1.17 or above. Make sure to add Go to PATH.
-- [Awpy library](https://awpy.readthedocs.io/en/latest/installation.html): this is the main library used to parse the demo files. The author is Peter Xenopoulos, who was very kind to not only make the library public but also helped me when I run into some troubles using it. I ran all my code using version 1.1.9 of the awpy library.
+- [Awpy library](https://awpy.readthedocs.io/en/latest/installation.html): this is the main library used to parse the demo files. The author is [Peter Xenopoulos](http://www.peterxeno.com/), who was very kind to not only make the library public but also to help me when I run into some troubles using it. I ran all my code using version 1.1.9 of the awpy library.
 
 Once both are installed, you should be able to run all of the code provided in the folder 'codigo'.
 # DemoParser.ipynb
