@@ -28,4 +28,4 @@ Both write a .xlsx fle to the 'output' folder named 'winProb'. In it, there are 
 At the end of the file, there are some block codes that merge 'parsedDemos.xlsx' and 'winProb.xlsx' into another file named 'final.xlsx', also in the 'output' folder.
 
 ## reg.do
-This is the replication file for the regressions. It imports the 'final.xlsx', cleans it, creates the relevant variables, and then runs the regressions. The regression tables are exported into the 'output' folder into a latex and a text file named main_reg. This is the 'Main specification table' in the thesis.
+This is the replication file for the regressions. It imports the 'final.xlsx', cleans it, creates the relevant variables, and then runs the regressions. The regression tables are exported into the 'output' folder into a .tex and a .txt file named main_reg. This is the 'Main specification table' in the thesis.
