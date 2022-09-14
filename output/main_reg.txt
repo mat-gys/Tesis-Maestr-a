@@ -1,0 +1,27 @@
+		(1)	(2)
+VARIABLES	LABELS	Extensive	Intensive
+			
+technicalTimeOut	Technical time out	0.127	
+		(0.110)	
+lag_cum_win	Wins in a row	0.024***	0.024***
+		(0.005)	(0.005)
+win_time_out	Winner time out	0.187***	0.187***
+		(0.037)	(0.037)
+loss_time_out	Loser time out	-0.161***	-0.162***
+		(0.026)	(0.026)
+win_score	Score differential (winner - loser)	-0.009***	-0.008***
+		(0.002)	(0.002)
+win_Eq	Winner's equipment value	-0.000***	-0.000***
+		(0.000)	(0.000)
+loss_Eq	Loser's equipment value	0.000***	0.000***
+		(0.000)	(0.000)
+win_Cash	Winner's cash	-0.000***	-0.000***
+		(0.000)	(0.000)
+loss_Cash	Loser's cash	0.000***	0.000***
+		(0.000)	(0.000)
+			
+Observations		2,158	2,158
+Match fixed effects		Yes	Yes
+Round fixed effects		Yes	Yes
+Robust standard errors in parentheses			
+*** p<0.01, ** p<0.05, * p<0.1			
