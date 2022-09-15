@@ -1,5 +1,5 @@
 * Setting directory
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Atpt\\output"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\output"
 cd "$main"
 
 * Import dataset
@@ -30,7 +30,7 @@ gen lag_cum_win = cum_win[_n - 1]
 label var lag_cum_win "Accumulated wins by team who won last round"
 
 * Dropping first rounds
-drop if roundNum == 1 | nonDefinedTimeOut == 1
+drop if roundNum == 1 | nonDefinedTimeOut == 1 | ctTimeOut == 2 | tTimeOut == 2
 
 * Replace missing values in timeout variables
 local varlist ctTimeOut tTimeOut technicalTimeOut
@@ -100,13 +100,26 @@ reg y win_time_out loss_time_out
 reg y after_win_to after_loss_to
 
 * Intensive Measure
+* drop if time_tto_long == 1
 bysort matchID: egen median_time_between_rounds = median(freezeTimeTotal)
 gen tto_time = technicalTimeOut *(freezeTimeTotal - median_time_between_rounds)/128.21 if (freezeTimeTotal != median_time_between_rounds)
 label var tto_time "Duration in (approximately) seconds of the technical timeout"
 recode tto_time (. = 0)
 
 * Checking if there's correlation between who won last round and who calls the technical timeout when observable
-corr ct_win ct_tto t_win t_tto
+estpost corr ct_win ct_tto t_tto
+esttab, cell("rho p count") tex
+
+estpost corr t_win ct_tto t_tto
+esttab, cell("rho p count") tex
+
+estpost corr ct_win ct_tto t_tto if technicalTimeOut == 1
+esttab, cell("rho p count") tex
+
+estpost corr t_win ct_tto t_tto if technicalTimeOut == 1
+esttab, cell("rho p count") tex
+corr ct_win ct_tto t_win t_tto if technicalTimeOut == 1
+
 
 * Generate series variable
 split matchID, parse("vs") gen(series)
@@ -133,12 +146,12 @@ label var win_Cash "Winner's cash"
 label var loss_Cash "Loser's cash"
 
 xtreg y technicalTimeOut lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
-outreg2 using main_reg, tex replace dec(3) ctitle(Extensive) keep(technicalTimeOut lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash) label addtext(Match fixed effects, Yes, Round fixed effects, Yes) nocons noni nor
+outreg2 using main_reg, tex replace dec(3) ctitle(Extensive) keep(technicalTimeOut lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash) label addtext(Match fixed effects, Yes, Round fixed effects, Yes) nocons nor
 
 * Intensive regression 
 xtreg y tto_time lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
-* 0.0004741*30 (usual timeout duration) = 0.014 increased change of previous round loser winning the current round
-outreg2 using main_reg, tex append dec(3) ctitle(Intensive) keep(time_tto lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash) label addtext(Match fixed effects, Yes, Round fixed effects, Yes) nocons noni nor
+* 0.0004338*30 (usual timeout duration) = 0.013 increased change of previous round loser winning the current round
+outreg2 using main_reg, tex append dec(3) ctitle(Intensive) keep(tto_time lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash) label addtext(Match fixed effects, Yes, Round fixed effects, Yes) nocons nor
 
 xtreg y tto_time lag_cum_win time_tto_long win_time_out loss_time_out win_score i.roundNum, i(ID) fe cluster(ID) robust
 
