@@ -5,7 +5,7 @@ In this repository, you'll find the replication files for my UdeSA Master's thes
 ## Data
 The file `final` in the `ouput` folder has all the data necessary to run the dofile regressions.
 
-Files containing match information, downloaded from [HLTV](https://www.hltv.org/results), were too large to include in github. They are available in my [DropBox](https://www.dropbox.com/sh/zbx6g8yjy4d1c7i/AAD_wY3Cp0cWY9mIHYtlmvRSa?dl=0). Once you download the files, you should place them in the `input` folder. If you wish to store it in another folder, you'll have to manually change the _path_to_demos_ variable provided in the code to your prefered folder location.
+Files containing match information, downloaded from [HLTV](https://www.hltv.org/results), were too large to include in github. They are available in my [DropBox](https://www.dropbox.com/sh/zbx6g8yjy4d1c7i/AAD_wY3Cp0cWY9mIHYtlmvRSa?dl=0). Once you download the files, you should place them in the `parsedDemos` folder. If you wish to store it in another folder, you'll have to manually change the _path_to_demos_ variable provided in the code to your prefered folder location.
 Take into account, since some variables had to be included manually, that the last 7 columns in `parsedDemos.xlsx` should not be altered. There's a backup file in the main folder if needed.
 
 
