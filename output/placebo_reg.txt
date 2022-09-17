@@ -1,0 +1,35 @@
+		(1)	(2)	(3)	(4)	(5)	(6)
+VARIABLES	LABELS	Extensive	Intensive	Extensive	Intensive	Extensive	Intensive
+							
+tech_time_out_neg_1	1 round lead technical timeout	0.080					
+		(0.253)					
+		[0.751]					
+win_time_out	Winner timeout	0.154**	0.154**	0.154**	0.154**	0.155**	0.155**
+		(0.070)	(0.069)	(0.069)	(0.070)	(0.070)	(0.070)
+		[0.029]	[0.029]	[0.029]	[0.029]	[0.028]	[0.029]
+loss_time_out	Loser timeout	-0.026	-0.025	-0.025	-0.025	-0.024	-0.024
+		(0.062)	(0.063)	(0.063)	(0.063)	(0.063)	(0.063)
+		[0.677]	[0.686]	[0.689]	[0.690]	[0.700]	[0.706]
+tech_time_out_time_neg_1	1 round lead technical timeout time		0.000				
+			(0.000)				
+			[0.595]				
+tech_time_out_neg_2	2 round lead technical timeout			-0.025			
+				(0.186)			
+				[0.896]			
+tech_time_out_time_neg_2	2 round lead technical timeout time				0.000		
+					(0.000)		
+					[0.756]		
+tech_time_out_neg_3	3 round lead technical timeout					-0.134	
+						(0.185)	
+						[0.469]	
+tech_time_out_time_neg_3	3 round lead technical timeout time						-0.000
+							(0.000)
+							[0.910]
+							
+Observations		750	750	748	748	746	746
+Number of ID		101	101	101	101	101	101
+Controls		Yes	Yes	Yes	Yes	Yes	Yes
+Match fixed effects		Yes	Yes	Yes	Yes	Yes	Yes
+Round fixed effects		Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in brackets							
+*** p<0.01, ** p<0.05, * p<0.1							

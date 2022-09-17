@@ -1,0 +1,41 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{tabular}{lcccccc} \hline
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+VARIABLES & Extensive & Intensive & Extensive & Intensive & Extensive & Intensive \\ \hline
+ &  &  &  &  &  &  \\
+1 round lead technical timeout & 0.080 &  &  &  &  &  \\
+ & (0.253) &  &  &  &  &  \\
+ & [0.751] &  &  &  &  &  \\
+Winner timeout & 0.154** & 0.154** & 0.154** & 0.154** & 0.155** & 0.155** \\
+ & (0.070) & (0.069) & (0.069) & (0.070) & (0.070) & (0.070) \\
+ & [0.029] & [0.029] & [0.029] & [0.029] & [0.028] & [0.029] \\
+Loser timeout & -0.026 & -0.025 & -0.025 & -0.025 & -0.024 & -0.024 \\
+ & (0.062) & (0.063) & (0.063) & (0.063) & (0.063) & (0.063) \\
+ & [0.677] & [0.686] & [0.689] & [0.690] & [0.700] & [0.706] \\
+1 round lead technical timeout time &  & 0.000 &  &  &  &  \\
+ &  & (0.000) &  &  &  &  \\
+ &  & [0.595] &  &  &  &  \\
+2 round lead technical timeout &  &  & -0.025 &  &  &  \\
+ &  &  & (0.186) &  &  &  \\
+ &  &  & [0.896] &  &  &  \\
+2 round lead technical timeout time &  &  &  & 0.000 &  &  \\
+ &  &  &  & (0.000) &  &  \\
+ &  &  &  & [0.756] &  &  \\
+3 round lead technical timeout &  &  &  &  & -0.134 &  \\
+ &  &  &  &  & (0.185) &  \\
+ &  &  &  &  & [0.469] &  \\
+3 round lead technical timeout time &  &  &  &  &  & -0.000 \\
+ &  &  &  &  &  & (0.000) \\
+ &  &  &  &  &  & [0.910] \\
+ &  &  &  &  &  &  \\
+Observations & 750 & 750 & 748 & 748 & 746 & 746 \\
+Number of ID & 101 & 101 & 101 & 101 & 101 & 101 \\
+Controls & Yes & Yes & Yes & Yes & Yes & Yes \\
+Match fixed effects & Yes & Yes & Yes & Yes & Yes & Yes \\
+ Round fixed effects & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+\multicolumn{7}{c}{ Robust standard errors in brackets} \\
+\multicolumn{7}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{document}

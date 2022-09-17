@@ -1,0 +1,13 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\froman Times New Roman;}{\f1\fswiss Arial;}{\f2\fmodern Courier New;}}
+\trowd\intbl\trautofit1\trgaph144\sb79\sa79\trqc\clbrdrt\brdrs\cellx5880\clbrdrt\brdrs\cellx11592\clbrdrt\brdrs\cellx17304\fs24 \ql Variable name\cell \qc Mean counter terrorist timeout = 1\cell \qc Mean counter terrorist timeout = 0\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb79\sa0\trqc\clbrdrt\brdrs\cellx5880\clbrdrt\brdrs\cellx11592\clbrdrt\brdrs\cellx17304\fs24 \pard\intbl\ql 1 if ct team won round\cell \pard\intbl\tqdec\tx2795 0.53\cell \pard\intbl\tqdec\tx2795 0.75\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Wins in a row\cell \pard\intbl\tqdec\tx2795 2.74\cell \pard\intbl\tqdec\tx2795 3.25\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Winner timeout\cell \pard\intbl\tqdec\tx2795 0.06\cell \pard\intbl\tqdec\tx2795 0.25\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Loser timeout\cell \pard\intbl\tqdec\tx2795 0.09\cell \pard\intbl\tqdec\tx2795 0.00\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Score differential (winner - loser)\cell \pard\intbl\tqdec\tx2795 -0.23\cell \pard\intbl\tqdec\tx2795 -0.75\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Winner's equipment value\cell \pard\intbl\tqdec\tx2795 15,419.02\cell \pard\intbl\tqdec\tx2795 18,212.50\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Loser's equipment value\cell \pard\intbl\tqdec\tx2795 2,418.42\cell \pard\intbl\tqdec\tx2795 212.50\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx5880\cellx11592\cellx17304\fs24 \pard\intbl\ql Winner's cash\cell \pard\intbl\tqdec\tx2795 28,226.21\cell \pard\intbl\tqdec\tx2795 33,500.00\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa79\trqc\clbrdrb\brdrs\cellx5880\clbrdrb\brdrs\cellx11592\clbrdrb\brdrs\cellx17304\fs24 \pard\intbl\ql Loser's cash\cell \pard\intbl\tqdec\tx2795 21,985.31\cell \pard\intbl\tqdec\tx2795 20,512.50\cell\row
+\pard\sb0\sa0\fs24\par
+}
