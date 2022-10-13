@@ -19,5 +19,4 @@ Both write a .xlsx fle to the 'output' folder named 'winProb'. In it, there are 
 At the end of the file, there are some block codes that merge 'parsedDemos.xlsx' and 'winProb.xlsx' into another file named 'final.xlsx', also in the 'output' folder.
 
 ### .do files
----
 The .do files contain the code used to clean de data (in `clean_data.do`), and create the tables in the thesis. All tables are exportex as .tex files onto the `output` folder.
