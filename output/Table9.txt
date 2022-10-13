@@ -1,0 +1,27 @@
+		(1)	(2)	(3)
+VARIABLES	LABELS	Extensive (time > 30)	Extensive (time > 30)	Extensive (time > 30)
+				
+tech_time_out_neg_1	1 round lead technical timeout	0.1622		
+		(0.1054)		
+		[0.1269]		
+tech_time_out_neg_2	2 round lead technical timeout		-0.0888	
+			(0.0972)	
+			[0.3628]	
+tech_time_out_neg_3	3 round lead technical timeout			0.0631
+				(0.1186)
+				[0.5958]
+win_time_out	Winner timeout	-0.1200**	-0.1203**	-0.1202**
+		(0.0604)	(0.0603)	(0.0602)
+		[0.0495]	[0.0489]	[0.0488]
+loss_time_out	Loser timeout	0.0438	0.0424	0.0422
+		(0.0319)	(0.0324)	(0.0323)
+		[0.1736]	[0.1936]	[0.1951]
+				
+Observations		727	726	724
+Number of ID		101	101	101
+Controls		Yes	Yes	Yes
+Match fixed effects		Yes	Yes	Yes
+Round fixed effects		Yes	Yes	Yes
+Round after tactical timeout included		Yes	Yes	Yes
+Robust standard errors in brackets				
+*** p<0.01, ** p<0.05, * p<0.1				

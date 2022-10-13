@@ -1,0 +1,21 @@
+		(1)	(2)
+VARIABLES	LABELS	Intensive	Intensive
+			
+tto_time	Duration (s) of technical timeout	0.0002*	0.0002*
+		(0.0001)	(0.0001)
+		[0.0715]	[0.0972]
+win_time_out	Winner timeout	-0.1192*	
+		(0.0602)	
+		[0.0505]	
+loss_time_out	Loser timeout	0.0437	
+		(0.0321)	
+		[0.1758]	
+			
+Observations		732	643
+Number of ID		103	102
+Controls		Yes	Yes
+Match fixed effects		Yes	Yes
+Round fixed effects		Yes	Yes
+Round after tactical timeout included		Yes	No
+Robust standard errors in brackets			
+*** p<0.01, ** p<0.05, * p<0.1			

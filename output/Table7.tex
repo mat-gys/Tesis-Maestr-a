@@ -1,0 +1,33 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{tabular}{lccc} \hline
+ & (1) & (2) & (3) \\
+VARIABLES & Intensive & Intensive & Intensive \\ \hline
+ &  &  &  \\
+1 round lead technical timeout time & 0.0002** &  &  \\
+ & (0.0001) &  &  \\
+ & [0.0366] &  &  \\
+2 round lead technical timeout time &  & -0.0002** &  \\
+ &  & (0.0001) &  \\
+ &  & [0.0389] &  \\
+3 round lead technical timeout time &  &  & -0.0002 \\
+ &  &  & (0.0001) \\
+ &  &  & [0.1293] \\
+Winner timeout & -0.1192* & -0.1194* & -0.1196* \\
+ & (0.0603) & (0.0603) & (0.0603) \\
+ & [0.0509] & [0.0503] & [0.0502] \\
+Loser timeout & 0.0431 & 0.0431 & 0.0427 \\
+ & (0.0323) & (0.0324) & (0.0324) \\
+ & [0.1854] & [0.1859] & [0.1905] \\
+ &  &  &  \\
+Observations & 729 & 727 & 725 \\
+Number of ID & 101 & 101 & 101 \\
+Controls & Yes & Yes & Yes \\
+Match fixed effects & Yes & Yes & Yes \\
+Round fixed effects & Yes & Yes & Yes \\
+ Round after tactical timeout included & Yes & Yes & Yes \\ \hline
+\multicolumn{4}{c}{ Robust standard errors in brackets} \\
+\multicolumn{4}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{document}
