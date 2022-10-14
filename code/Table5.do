@@ -1,4 +1,4 @@
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\codigo"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\code"
 global output "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\output"
 cd "$main"
 
@@ -40,17 +40,6 @@ local Yes Yes
 local tacticals win_time_out loss_time_out
 
 forval j = 1/2{
-
-	****************** Number of matches and observations ******************
-	
-	codebook ID
-	di _N
-	
-	
-	************************** Vanilla regressions *************************
-	
-	reg y technicalTimeOut
-	reg y win_time_out loss_time_out
 	
 	if `j' == 2{
 		local replace append

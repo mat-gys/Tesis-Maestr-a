@@ -1,4 +1,4 @@
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\codigo"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\code"
 cd "$main"
 
 run clean_data.do
