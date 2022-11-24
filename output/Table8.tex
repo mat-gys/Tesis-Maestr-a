@@ -1,27 +1,28 @@
 \documentclass[]{article}
 \setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
 \begin{document}
-\begin{tabular}{lccc} \hline
- & (1) & (2) & (3) \\
-VARIABLES & Intensive & Intensive & Intensive \\ \hline
- &  &  &  \\
-1 round lead technical timeout time & 0.0002** &  &  \\
- & (0.0001) &  &  \\
- & [0.0378] &  &  \\
-2 round lead technical timeout time &  & -0.0002** &  \\
- &  & (0.0001) &  \\
- &  & [0.0465] &  \\
-3 round lead technical timeout time &  &  & -0.0002 \\
- &  &  & (0.0001) \\
- &  &  & [0.1330] \\
- &  &  &  \\
-Observations & 640 & 638 & 636 \\
-Number of ID & 100 & 100 & 100 \\
-Controls & Yes & Yes & Yes \\
-Match fixed effects & Yes & Yes & Yes \\
-Round fixed effects & Yes & Yes & Yes \\
- Round after tactical timeout included & No & No & No \\ \hline
-\multicolumn{4}{c}{ Robust standard errors in brackets} \\
-\multicolumn{4}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\begin{tabular}{lcccc} \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+Duration (s) of technical timeout & 0.0013*** & 0.0021** & 0.0019*** & 0.0001 \\
+ & (0.0003) & (0.0008) & (0.0007) & (0.0048) \\
+ & [0.0000] & [0.0165] & [0.0053] & [0.9833] \\
+Duration (s) of technical timeout ^2 & -0.0000*** & -0.0000 & -0.0000* & 0.0000 \\
+ & (0.0000) & (0.0000) & (0.0000) & (0.0001) \\
+ & [0.0000] & [0.1702] & [0.0920] & [0.7376] \\
+Duration (s) of technical timeout ^3 &  & 0.0000 &  & -0.0000 \\
+ &  & (0.0000) &  & (0.0000) \\
+ &  & [0.2812] &  & [0.6728] \\
+ &  &  &  &  \\
+Observations & 729 & 729 & 728 & 728 \\
+Number of ID & 102 & 102 & 102 & 102 \\
+Controls & Yes & Yes & Yes & Yes \\
+Match fixed effects & Yes & Yes & Yes & Yes \\
+Round fixed effects & Yes & Yes & Yes & Yes \\
+Round after tactical timeout included & Yes & Yes & Yes & Yes \\
+ Includes duration outlier & Yes & Yes & No & No \\ \hline
+\multicolumn{5}{c}{ Robust standard errors in brackets} \\
+\multicolumn{5}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
 \end{tabular}
 \end{document}

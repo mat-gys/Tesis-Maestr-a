@@ -1,37 +1,75 @@
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\code"
-global output "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\output"
-cd "$main"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files"
+global code "$main\\code"
+global output "$main\\output"
+cd "$code"
 
-run Table6.do
+run clean_data.do
 
-drop if tto_time_actual < 30 & tto_time_actual > 0
+cd"$output"
 
-set seed 9302022
+// drop if tto_time > 600
 
-gen indicator = (tech ==1)
+************ Dropping rounds affected by technical and tactical timeouts ************
+
+sort matchID roundNum
+
+bysort matchID: tab tech
+egen after_tto = min(cond(technicalTimeOut == 1, roundNum, .)), by(matchID)  
+bysort matchID: keep if roundNum <= after_tto
+
+* Checking that most observations where nonDefinedTimeOut = 1 are just because of usual breaks in matches
+gen a = ((roundNum == 16 | roundNum == 31 | roundNum == 34 | roundNum == 37 | roundNum == 40 | roundNum == 43 | roundNum == 46 | roundNum == 49) & freezeTimeTotal > 2562 & nonDefinedTimeOut == 1)
+tab a nonD
+
+sort matchID roundNum
+
+drop if tto_time_a < 30 & tto_time_a > 0
+
+
+egen after_tac_to = min(cond(ctTimeOut > 0 |tTimeOut > 0, roundNum, .)), by(matchID)
+bysort matchID: keep if roundNum <= after_tac_to
+tab technicalTimeOut
+
+* Dropping observations after non defined timeouts that weren't usual breaks
+bysort matchID: tab tech
+egen after_nond_to = min(cond(a == 0 & nonD ==1, roundNum, .)), by(matchID)  
+bysort matchID: keep if roundNum < after_nond_to
+
+
+************************************* Placebos *************************************
+
+*************** Placebo test with previous rounds ***************
+
 local replace replace
+local placebo placebo
+local tacticals win_time_out loss_time_out
+local table Table11
+local Yes Yes
 
-foreach numb of numlist 1/6{
+forval j = 1/2{
 
-	gen random = runiform()
-	sort indicator random
-	generate insample = indicator & (_N - _n) <1
+	preserve
+	local replace replace
+	forval i = 1/3{
+	* Dropping rounds that whould make the timeout change game
+	drop if technicalTimeOut ==1 & roundNum == `i' + 1
 	
-	preserve 
+	gen tech_time_out_neg_`i' = technicalTimeOut[_n + `i']
+	label var tech_time_out_neg_`i' "`i' round lead technical timeout"
 	
-	keep if insample ~= 1
+	xtreg y tech_time_out_neg_`i' `tacticals' i.lag_cum_win win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
 	
-	xtreg y tto_time_actual lag_cum_win win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
-	outreg2 using Table11, tex `replace' dec(4) ctitle("`title' `time'") keep(tto_time_actual win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, No) nocons nor stats(coef se pval) par(se) bracket(pval)
+	outreg2 using `table', tex `replace' dec(4) ctitle(Extensive (time > 30)) keep(tech_time_out_neg_`i' `tacticals') label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval) sortvar(tech_time_out_neg_1 tech_time_out_neg_2 tech_time_out_neg_3 win_time_out loss_time_out)
 	
-	xtreg y technicalTimeOut lag_cum_win win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
-	outreg2 using Table12, tex `replace' dec(4) ctitle("`title' `time'") keep(technicalTimeOut win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, No) nocons nor stats(coef se pval) par(se) bracket(pval)
-	
-	restore
-	
-	replace indicator = 0 if insample == 1
-	
-	drop insample
-	drop random
 	local replace append
 }
+	restore
+	
+	if `j' == 1{
+		bysort matchID: keep if roundNum < after_tac_to
+		local Yes No
+		local tacticals
+		local table Table12
+	}
+
+}	

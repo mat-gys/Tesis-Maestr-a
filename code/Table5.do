@@ -1,6 +1,7 @@
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\code"
-global output "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\output"
-cd "$main"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files"
+global code "$main\\code"
+global output "$main\\output"
+cd "$code"
 
 run clean_data.do
 
@@ -48,13 +49,13 @@ forval j = 1/2{
 	}
 	
 	************************* Extensive regression *************************
-	xtreg y win_tech_timeout loss_tech_timeout lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+	xtreg y win_tech_timeout loss_tech_timeout i.lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
 	outreg2 using Table5, tex `replace' dec(4) ctitle(Extensive) keep(win_tech_timeout loss_tech_timeout win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval) sortvar(win_tech_timeout loss_tech_timeout win_tech_timeout_time loss_tech_timeout_time win_time_out loss_time_out)
 	
 	
 	************************* Intensive regression *************************
 	
-	xtreg y win_tech_timeout_time loss_tech_timeout_time lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+	xtreg y win_tech_timeout_time loss_tech_timeout_time i.lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
 	outreg2 using Table5, tex append dec(4) ctitle(Intensive) keep(win_tech_timeout_time loss_tech_timeout_time win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval) sortvar(win_tech_timeout loss_tech_timeout win_tech_timeout_time loss_tech_timeout_time win_time_out loss_time_out)
 	
 	

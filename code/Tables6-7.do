@@ -1,6 +1,7 @@
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\code"
-global output "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\output"
-cd "$main"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files"
+global code "$main\\code"
+global output "$main\\output"
+cd "$code"
 
 run clean_data.do
 
@@ -31,7 +32,7 @@ egen after_nond_to = min(cond(a == 0 & nonD ==1, roundNum, .)), by(matchID)
 bysort matchID: keep if roundNum < after_nond_to
 
 
-************************************* Main loop *************************************
+************************************* Tables 6 and 7 *************************************
 
 
 local replace replace
@@ -50,9 +51,14 @@ forval j = 1/4{
 	
 	
 	if `j' == 2 | `j' == 4{
-		local replace append
 		drop if tto_time_a < 30 & tto_time_a > 0
 		local time "time > 30"
+	
+		xtreg y technicalTimeOut#i.lag_cum_win i.lag_cum_win win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+outreg2 using Table7, tex `replace' dec(4) ctitle("`title' `time'") keep(technicalTimeOut#lag_cum_win win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval)
+	
+		local replace append
+		
 	}
 
 	if `j' == 3{
@@ -64,7 +70,7 @@ forval j = 1/4{
 	}
 	
 ************************* Extensive regression *************************
-xtreg y technicalTimeOut lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+xtreg y technicalTimeOut i.lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
 outreg2 using Table6, tex `replace' dec(4) ctitle("`title' `time'") keep(technicalTimeOut win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval)
 
 

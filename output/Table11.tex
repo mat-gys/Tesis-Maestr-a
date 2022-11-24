@@ -1,21 +1,27 @@
 \documentclass[]{article}
 \setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
 \begin{document}
-\begin{tabular}{lcccccc} \hline
- & (1) & (2) & (3) & (4) & (5) & (6) \\
-VARIABLES &  &  &  &  &  &  \\ \hline
- &  &  &  &  &  &  \\
-Duration (s) of technical timeout & 0.0002* & 0.0002* & 0.0010*** & 0.0002* & 0.0002* & 0.0002* \\
- & (0.0001) & (0.0001) & (0.0002) & (0.0001) & (0.0001) & (0.0001) \\
- & [0.0915] & [0.0885] & [0.0000] & [0.0953] & [0.0569] & [0.0955] \\
- &  &  &  &  &  &  \\
-Observations & 639 & 639 & 639 & 639 & 639 & 639 \\
-Number of ID & 101 & 101 & 101 & 100 & 101 & 101 \\
-Controls & Yes & Yes & Yes & Yes & Yes & Yes \\
-Match fixed effects & Yes & Yes & Yes & Yes & Yes & Yes \\
-Round fixed effects & Yes & Yes & Yes & Yes & Yes & Yes \\
- Round after tactical timeout included & No & No & No & No & No & No \\ \hline
-\multicolumn{7}{c}{ Robust standard errors in brackets} \\
-\multicolumn{7}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\begin{tabular}{lccc} \hline
+ & (1) & (2) & (3) \\
+VARIABLES & Extensive (time > 30) & Extensive (time > 30) & Extensive (time > 30) \\ \hline
+ &  &  &  \\
+1 round lead technical timeout & 0.1588 &  &  \\
+ & (0.1048) &  &  \\
+ & [0.1328] &  &  \\
+2 round lead technical timeout &  & -0.1008 &  \\
+ &  & (0.0868) &  \\
+ &  & [0.2485] &  \\
+3 round lead technical timeout &  &  & 0.0499 \\
+ &  &  & (0.1072) \\
+ &  &  & [0.6425] \\
+ &  &  &  \\
+Observations & 638 & 637 & 635 \\
+Number of ID & 100 & 100 & 100 \\
+Controls & Yes & Yes & Yes \\
+Match fixed effects & Yes & Yes & Yes \\
+Round fixed effects & Yes & Yes & Yes \\
+ Round after tactical timeout included & No & No & No \\ \hline
+\multicolumn{4}{c}{ Robust standard errors in brackets} \\
+\multicolumn{4}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
 \end{tabular}
 \end{document}

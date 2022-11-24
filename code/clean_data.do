@@ -79,12 +79,6 @@ label var t_cash "Team B Cash at start of round"
 gen y = (cum_win == 1 )
 label var y "0 if team that won last round also wins current round"
 
-* Not possible to use more wins in a row
-*drop y
-*gen y = (cum_win == 1 & lag_cum_win ==2 )
-* keep if lag_cum_win == 2
-*tab y tech
-
 
 drop if secondsSincePhaseStart == . | ctNone == 1 | tNone == 1 | start == . | roundNum == 1 
 /*

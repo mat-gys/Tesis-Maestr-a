@@ -1,6 +1,7 @@
-global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\code"
-global output "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files\\output"
-cd "$main"
+global main "C:\\Users\\Matias\\Documents\\UDESA\\Tesis_maestria\\Replication files"
+global code "$main\\code"
+global output "$main\\output"
+cd "$code"
 
 run clean_data.do
 
@@ -37,8 +38,8 @@ foreach numb of numlist 1/9{
 	
 	keep if insample ~= 1
 	
-	xtreg y tto_time_actual lag_cum_win win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
-	outreg2 using AppendixTable15, tex `replace' dec(4) ctitle("`title' `time'") keep(tto_time_actual win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, No) nocons nor stats(coef se pval) par(se) bracket(pval)
+	xtreg y tto_time_actual i.lag_cum_win win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+	outreg2 using AppendixTable17, tex `replace' dec(4) ctitle("`title' `time'") keep(tto_time_actual win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, No) nocons nor stats(coef se pval) par(se) bracket(pval)
 	
 	restore
 	

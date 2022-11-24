@@ -45,10 +45,10 @@ forval j = 1/2{
 
 	************************* Intensive regression *************************
 	
-	xtreg y tto_time lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+	xtreg y tto_time i.lag_cum_win `tacticals' win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
 	display _b[tto_time] * 30
 	* a round after a 30 second timeout is 1.5 percentage points more likely to revert the previous round winner
-	outreg2 using AppendixTable13, tex `replace' dec(4) ctitle(Intensive) keep(technicalTimeOut tto_time win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval) sortvar(technicalTimeOut tto_time win_time_out loss_time_out)
+	outreg2 using AppendixTable15, tex `replace' dec(4) ctitle(Intensive) keep(technicalTimeOut tto_time win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval) sortvar(technicalTimeOut tto_time win_time_out loss_time_out)
 	*outreg2 using main_reg, tex append dec(3) ctitle(Intensive) keep(tto_time lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash) label addtext(Match fixed effects, Yes, Round fixed effects, Yes) nocons nor stats(coef se pval) par(se) bracket(pval)
 	
 	
@@ -93,8 +93,8 @@ forval j = 1/4{
 	}
 	
 ************************* Extensive regression *************************
-xtreg y technicalTimeOut lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
-outreg2 using AppendixTable14, tex `replace' dec(4) ctitle("`title' `time'") keep(technicalTimeOut win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval)
+xtreg y technicalTimeOut i.lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash i.roundNum, i(ID) fe cluster(ID) robust
+outreg2 using AppendixTable16, tex `replace' dec(4) ctitle("`title' `time'") keep(technicalTimeOut win_time_out loss_time_out) label addtext(Controls, Yes, Match fixed effects, Yes, Round fixed effects, Yes, Round after tactical timeout included, `Yes') nocons nor stats(coef se pval) par(se) bracket(pval)
 
 
 local title ""

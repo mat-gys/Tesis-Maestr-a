@@ -1,24 +1,24 @@
 		(1)	(2)	(3)	(4)
 VARIABLES	LABELS	Extensive	Intensive	Extensive	Intensive
 					
-win_tech_timeout	Winner technical timeout	0.2023***		0.2029***	
-		(0.0383)		(0.0417)	
+win_tech_timeout	Winner technical timeout	0.2298***		0.2366***	
+		(0.0387)		(0.0402)	
 		[0.0000]		[0.0000]	
-loss_tech_timeout	Loser technical timeout	0.1288***		0.1203**	
-		(0.0420)		(0.0470)	
-		[0.0028]		[0.0120]	
-win_tech_timeout_time	Duration (s) of winner technical timeout		0.0015***		0.0015***
+loss_tech_timeout	Loser technical timeout	0.1283***		0.1217**	
+		(0.0472)		(0.0565)	
+		[0.0077]		[0.0338]	
+win_tech_timeout_time	Duration (s) of winner technical timeout		0.0017***		0.0017***
 			(0.0003)		(0.0003)
 			[0.0000]		[0.0000]
-loss_tech_timeout_time	Duration (s) of loser technical timeout		0.0001**		0.0001**
+loss_tech_timeout_time	Duration (s) of loser technical timeout		0.0001**		0.0001*
 			(0.0001)		(0.0001)
-			[0.0139]		[0.0426]
-win_time_out	Winner timeout	-0.1195**	-0.1195**		
-		(0.0601)	(0.0602)		
-		[0.0497]	[0.0496]		
-loss_time_out	Loser timeout	0.0436	0.0434		
-		(0.0318)	(0.0318)		
-		[0.1730]	[0.1749]		
+			[0.0263]		[0.0806]
+win_time_out	Winner timeout	-0.1147*	-0.1149*		
+		(0.0605)	(0.0605)		
+		[0.0609]	[0.0604]		
+loss_time_out	Loser timeout	0.0478	0.0476		
+		(0.0309)	(0.0309)		
+		[0.1251]	[0.1268]		
 					
 Observations		727	727	638	638
 Number of ID		102	102	101	101
