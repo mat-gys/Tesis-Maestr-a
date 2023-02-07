@@ -1,30 +1,19 @@
-		(1)	(2)	(3)	(4)
-VARIABLES	LABELS	Extensive	Intensive	Extensive	Intensive
-					
-win_tech_timeout	Winner technical timeout	0.2298***		0.2366***	
-		(0.0387)		(0.0402)	
-		[0.0000]		[0.0000]	
-loss_tech_timeout	Loser technical timeout	0.1283***		0.1217**	
-		(0.0472)		(0.0565)	
-		[0.0077]		[0.0338]	
-win_tech_timeout_time	Duration (s) of winner technical timeout		0.0017***		0.0017***
-			(0.0003)		(0.0003)
-			[0.0000]		[0.0000]
-loss_tech_timeout_time	Duration (s) of loser technical timeout		0.0001**		0.0001*
-			(0.0001)		(0.0001)
-			[0.0263]		[0.0806]
-win_time_out	Winner timeout	-0.1147*	-0.1149*		
-		(0.0605)	(0.0605)		
-		[0.0609]	[0.0604]		
-loss_time_out	Loser timeout	0.0478	0.0476		
-		(0.0309)	(0.0309)		
-		[0.1251]	[0.1268]		
-					
-Observations		727	727	638	638
-Number of ID		102	102	101	101
-Controls		Yes	Yes	Yes	Yes
-Match fixed effects		Yes	Yes	Yes	Yes
-Round fixed effects		Yes	Yes	Yes	Yes
-Round after tactical timeout included		Yes	Yes	No	No
-Robust standard errors in brackets					
-*** p<0.01, ** p<0.05, * p<0.1					
+		(1)
+VARIABLES	LABELS	0 if team that won last round also wins current round
+		
+1.under_three	Technical Timeout * 1-3 Accumulated wins in a row = 1	-0.0462
+		(0.0618)
+1.over_three	Technical Timeout * 4-6 Accumulated wins in a row = 1	0.1593
+		(0.1086)
+win_time_out	Winner timeout	-0.0103
+		(0.0673)
+loss_time_out	Loser timeout	0.0273
+		(0.0259)
+		
+Observations		3,837
+Number of ID		547
+Controls		Yes
+Match fixed effects		Yes
+Round fixed effects		Yes
+Robust standard errors in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		

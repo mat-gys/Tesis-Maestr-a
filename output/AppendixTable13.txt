@@ -1,0 +1,27 @@
+		(1)
+VARIABLES	LABELS	0 if team that won last round also wins current round
+		
+tech_1	Technical Timeout * 1 Win in a row	-0.2471**
+		(0.1116)
+tech_2	Technical Timeout * 2 Wins in a row	0.0529
+		(0.1101)
+tech_3	Technical Timeout * 3 Wins in a row	-0.1565
+		(0.1182)
+tech_4	Technical Timeout * 4 Wins in a row	0.2698*
+		(0.1510)
+tech_5	Technical Timeout * 5 Wins in a row	0.7936***
+		(0.0383)
+tech_6	Technical Timeout * 6 Wins in a row	-0.1504***
+		(0.0581)
+win_time_out	Winner timeout	-0.0113
+		(0.0671)
+loss_time_out	Loser timeout	0.0279
+		(0.0259)
+		
+Observations		3,814
+Number of ID		542
+Controls		Yes
+Match fixed effects		Yes
+Round fixed effects		Yes
+Robust standard errors in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		
