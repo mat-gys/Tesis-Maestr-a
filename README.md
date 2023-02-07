@@ -34,7 +34,7 @@ At the end of the file, there are some block codes that merge `parsedDemos.xlsx`
 
 #### .do files
 ---
-The .do files contain the code used to clean de data (in `clean_data.do`), and create the tables in the thesis. All tables are exportex as .tex files onto the `output` folder.
+The .do files contain the code used to clean de data (in `clean_data.do`), and create the tables in the thesis (in `V2.do`). All tables are exportex as .tex files onto the `output` folder.
 
 ## Data structure example
 The file `Data structure example.png` is an image that displays a visualization of the data structure that the awpy library produces. The example is reduced to the minimum information required to understand the structure. Every frame contains more information on every player of each team.
