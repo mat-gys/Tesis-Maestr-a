@@ -116,12 +116,13 @@ frmttable using Table2, varlabels statmat(C) substat(1) sdec(2,2,2,2) ctitles("V
 
 
 
-
-
+*Joint significance tests
 xtreg ct_tto t_win lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash win_defusers loss_defusers win_Armor loss_Armor win_Helmet loss_Helmet, i(ID) fe cluster(ID) robust
+test t_win lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash win_defusers loss_defusers win_Armor loss_Armor win_Helmet loss_Helmet
+
 xtreg t_tto ct_win lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash win_defusers loss_defusers win_Armor loss_Armor win_Helmet loss_Helmet, i(ID) fe cluster(ID) robust
-xtreg t_tto ct_win , i(ID) fe cluster(ID) robust
-xtreg ct_tto t_win , i(ID) fe cluster(ID) robust
+test ct_win lag_cum_win win_time_out loss_time_out win_score win_Eq loss_Eq win_Cash loss_Cash win_defusers loss_defusers win_Armor loss_Armor win_Helmet loss_Helmet
+
 
 
 
@@ -287,6 +288,8 @@ local replace replace
 
 forval lead = 1/3{
 	drop under_three over_three
+	local j = `lead' - 1
+	drop if tech_lead_`j' ==1
 	gen under_three = (lag_cum_win <= 3 & tech_lead_`lead' == 1)
 	gen over_three = (lag_cum_win > 3 & tech_lead_`lead' == 1)
 	label var under_three "Technical Timeout * 1-3 Accumulated wins in a row"
