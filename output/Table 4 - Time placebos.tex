@@ -1,16 +1,18 @@
                     &\multicolumn{1}{c}{0 if team that won last round also wins current round}&\multicolumn{1}{c}{0 if team that won last round also wins current round}&\multicolumn{1}{c}{0 if team that won last round also wins current round}\\
 \hline
-Winner Technical Timeout * 1-2 Wins in a row&      0.0826         &     -0.0038         &     -0.2795\sym{***}\\
-                    &    (0.0753)         &    (0.0630)         &    (0.0973)         \\
-Winner Technical Timeout * 3+ Wins in a row&      0.1205         &      0.0953         &      0.1331         \\
-                    &    (0.0775)         &    (0.1254)         &    (0.1170)         \\
-Loser Technical Timeout * 1-2 Wins in a row&     -0.0334         &      0.0250         &     -0.1887\sym{**} \\
-                    &    (0.0715)         &    (0.0740)         &    (0.0758)         \\
-Loser Technical Timeout * 3+ Wins in a row&      0.0239         &      0.0537         &      0.0703         \\
-                    &    (0.0816)         &    (0.1069)         &    (0.1504)         \\
+Winner Technical Timeout * 1-2 Wins in a row&      0.0802         &      0.0069         &     -0.2780\sym{***}\\
+                    &    (0.0764)         &    (0.0629)         &    (0.0965)         \\
+Winner Technical Timeout * 3+ Wins in a row&      0.1232         &      0.1034         &      0.1383         \\
+                    &    (0.0783)         &    (0.1242)         &    (0.1152)         \\
+Loser Technical Timeout * 1-2 Wins in a row&     -0.0386         &      0.0248         &     -0.1891\sym{**} \\
+                    &    (0.0722)         &    (0.0743)         &    (0.0742)         \\
+Loser Technical Timeout * 3+ Wins in a row&      0.0216         &      0.0531         &      0.0701         \\
+                    &    (0.0817)         &    (0.1080)         &    (0.1513)         \\
 \hline
 Observations        &       17602         &       17331         &       17125         \\
 Controls            &         Yes         &         Yes         &         Yes         \\
-Match FE            &         Yes         &         Yes         &         Yes         \\
-Round FE            &         Yes         &         Yes         &         Yes         \\
+Match fixed effects &         Yes         &         Yes         &         Yes         \\
+Round fixed effects &         Yes         &         Yes         &         Yes         \\
+Winner team fixed effects&         Yes         &         Yes         &         Yes         \\
 Number of matches   &        3014         &        2953         &        2896         \\
+Mean outcome        &                     &                     &                     \\

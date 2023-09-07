@@ -1,22 +1,24 @@
                     &\multicolumn{1}{c}{0 if team that won last round also wins current round}&\multicolumn{1}{c}{0 if team that won last round also wins current round}&\multicolumn{1}{c}{0 if team that won last round also wins current round}\\
 \hline
-Technical timeout   &     -0.0055         &                     &                     \\
-                    &    (0.0312)         &                     &                     \\
+Technical timeout   &     -0.0059         &                     &                     \\
+                    &    (0.0311)         &                     &                     \\
 Technical Timeout $\times$ 1-2 Wins in a row&                     &     -0.0698\sym{*}  &                     \\
-                    &                     &    (0.0374)         &                     \\
-Technical Timeout  $\times$ 3+ Wins in a row&                     &      0.1183\sym{**} &                     \\
-                    &                     &    (0.0538)         &                     \\
-Winner Technical Timeout $\times$ 1-2 Wins in a row&                     &                     &     -0.0485         \\
-                    &                     &                     &    (0.0503)         \\
-Winner Technical Timeout $\times$ 3+ Wins in a row&                     &                     &      0.1490\sym{*}  \\
-                    &                     &                     &    (0.0761)         \\
-Loser Technical Timeout $\times$ 1-2 Wins in a row&                     &                     &     -0.0950\sym{*}  \\
-                    &                     &                     &    (0.0550)         \\
-Loser Technical Timeout $\times$ 3+ Wins in a row&                     &                     &      0.0904         \\
-                    &                     &                     &    (0.0751)         \\
+                    &                     &    (0.0370)         &                     \\
+Technical Timeout  $\times$ 3+ Wins in a row&                     &      0.1165\sym{**} &                     \\
+                    &                     &    (0.0540)         &                     \\
+Winner Technical Timeout $\times$ 1-2 Wins in a row&                     &                     &     -0.0519         \\
+                    &                     &                     &    (0.0500)         \\
+Winner Technical Timeout $\times$ 3+ Wins in a row&                     &                     &      0.1484\sym{*}  \\
+                    &                     &                     &    (0.0765)         \\
+Loser Technical Timeout $\times$ 1-2 Wins in a row&                     &                     &     -0.0910\sym{*}  \\
+                    &                     &                     &    (0.0544)         \\
+Loser Technical Timeout $\times$ 3+ Wins in a row&                     &                     &      0.0874         \\
+                    &                     &                     &    (0.0752)         \\
 \hline
 Observations        &       17934         &       17934         &       17934         \\
 Controls            &         Yes         &         Yes         &         Yes         \\
-Match FE            &         Yes         &         Yes         &         Yes         \\
-Round FE            &         Yes         &         Yes         &         Yes         \\
+Match fixed effects &         Yes         &         Yes         &         Yes         \\
+Round fixed effects &         Yes         &         Yes         &         Yes         \\
+Winner team fixed effects&         Yes         &         Yes         &         Yes         \\
 Number of matches   &        3075         &        3075         &        3075         \\
+Mean outcome        &        0.31         &        0.31         &        0.31         \\
