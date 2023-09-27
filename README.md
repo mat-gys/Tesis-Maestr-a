@@ -3,7 +3,7 @@
 
 In this repository, you'll find the replication files for my updated UdeSA Master's thesis:
 
-# Psychological Momentum and Timeouts: Evidence from E-sports
+# Momentum-stopping Timeouts: Effects on Performance
 
 ## Data
 The file `parsed` in the `ouput` folder has all the data necessary to run the dofile regressions.
