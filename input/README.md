@@ -1,0 +1,1 @@
+This file is only to avoid Git ignoring the folder. ZIP files for the matches should be placed here before running `parser.py`. The files will later be extracted, and then deleted to save space.
